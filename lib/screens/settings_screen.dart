@@ -34,7 +34,7 @@ class SettingsScreen extends StatelessWidget {
             ),
             Text(
               "Settings Screen",
-              style: TextStyle(fontWeight: FontWeight.w900),
+              style: TextStyle(fontWeight: FontWeight.w900, fontSize: 16),
             )
           ],
         ),

@@ -1,4 +1,4 @@
-import 'package:challenge/screens/detailsScreen.dart';
+import 'package:challenge/screens/details_screen.dart';
 import 'package:challenge/screens/settings_screen.dart';
 import 'package:flutter/material.dart';
 

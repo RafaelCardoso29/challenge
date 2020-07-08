@@ -1,5 +1,7 @@
+import 'package:challenge/constants/urls.dart';
 import 'package:challenge/models/response/git_response.dart';
 import 'package:dio/dio.dart';
+import 'package:intl/intl.dart';
 
 class GitApi {
   Dio dio = Dio();
@@ -23,9 +25,17 @@ class GitApi {
   }
 
   Future<GitResponse> getGitRepo() async {
-    final response = await dio.get(
-        "https://api.github.com/search/repositories?q=created:>2017-10-22&sort=stars&order=desc&page=1");
+    _getDate();
+    final response = await dio
+        .get(GITHUB_ENDPOINT + _getDate() + "&sort=stars&order=desc&page=1");
     var responseJson = response.data;
     return GitResponse.fromJson(responseJson);
+  }
+
+  String _getDate() {
+    DateTime now = new DateTime.now();
+    DateTime dateMinus30days = new DateTime(now.year, now.month - 1, now.day);
+    var formatter = new DateFormat('yyyy-MM-dd');
+    return formatter.format(dateMinus30days).toString();
   }
 }

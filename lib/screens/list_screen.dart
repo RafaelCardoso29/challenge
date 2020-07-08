@@ -2,7 +2,7 @@ import 'package:challenge/components/repository_item.dart';
 import 'package:challenge/services/git_api.dart';
 import 'package:flutter/material.dart';
 
-import 'detailsScreen.dart';
+import 'details_screen.dart';
 
 class ListScreen extends StatefulWidget {
   @override
@@ -33,12 +33,14 @@ _buildRepositoryList() {
               shrinkWrap: true,
               scrollDirection: Axis.vertical,
               itemCount: snapshot.data.items.length,
-              itemBuilder: (BuildContext context, int i) => RepositoryItem(
-                item: snapshot.data.items[i],
+              itemBuilder: (BuildContext context, int i) => InkWell(
                 onTap: () => Navigator.pushNamed(
                   context,
                   DetailsScreen.routeName,
                   arguments: snapshot.data.items[i],
+                ),
+                child: RepositoryItem(
+                  item: snapshot.data.items[i],
                 ),
               ),
             ),

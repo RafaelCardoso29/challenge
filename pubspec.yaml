@@ -33,6 +33,7 @@ dependencies:
   rxdart: ^0.24.1
   dio: ^3.0.9
   splashscreen: ^1.2.0
+  intl: ^0.16.1
 
 dev_dependencies:
   flutter_test:

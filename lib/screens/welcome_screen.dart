@@ -1,3 +1,4 @@
+import 'package:challenge/constants/urls.dart';
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 
@@ -12,11 +13,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      alignment: Alignment.topCenter,
+      alignment: Alignment.center,
       fit: StackFit.loose,
       children: <Widget>[
         SplashScreen(
-          seconds: 5,
+          seconds: 3,
           gradientBackground: LinearGradient(
             begin: Alignment.bottomLeft,
             end: Alignment.topRight,
@@ -30,9 +31,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           height: MediaQuery.of(context).size.height / 2,
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: NetworkImage(
-                      'https://raw.githubusercontent.com/NeobrainMobile/coding-challenge/master/splash_screen_logo.png'),
-                  fit: BoxFit.fill)),
+                  image: NetworkImage(GITHUB_LOGO_URL), fit: BoxFit.fill)),
         ),
       ],
     );
